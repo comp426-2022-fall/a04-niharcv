@@ -1,0 +1,32 @@
+{
+  "name": "a04-niharcv",
+  "version": "1.0.0",
+  "description": "assignment 4 for comp426",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "keywords": [
+    "web",
+    "server",
+    "port",
+    "node",
+    "fs",
+    "args",
+    "http"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-niharcv.git"
+  },
+  "author": "niharcv",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-niharcv/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a04-niharcv#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.7"
+  }
+}
