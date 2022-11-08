@@ -1,14 +1,14 @@
-// Require minimist module (make sure you install this one via npm).
-const args = require('minimist')(process.argv.slice(2));
+import { roll } from './lib/roll.js';
+import minimist from 'minimist';
+import express from 'express';
 
+const args = minimist(process.argv.slice(2));
 const port = args.port || 5000
 
-const express = require('express')
 const app = express()
 
-app.use(express.urlencoded({
-    extended: true
-}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
   res.send('Hello World')
@@ -23,11 +23,9 @@ app.get('*', function (req, res) {
 })
 
 app.post('/app/roll/', function(req, res) {
-    const sides = req.query.sides;
-    const dice = req.query.dice;
-    const rolls = req.query.rolls;
-  
-    res.send(req.body);
+    res.send(roll(req.body.sides, req.body.dice, req.body.rolls))
 });
 
 app.listen(port)
+
+
