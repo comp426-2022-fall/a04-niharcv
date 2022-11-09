@@ -23,16 +23,21 @@ app.get('/app/roll/', function (req, res) {
 })
 
 app.get('/app/roll/*/', function (req, res) {
-    let myArray = req.split("/");
-    res.send(myArray)
+    let url = req.url;
+    let myArray = url.split("/");
+    res.send(roll(myArray[3], 2, 1))
 })
 
 app.get('/app/roll/*/*/', function (req, res) {
-    res.send('200 OK')
+    let url = req.url;
+    let myArray = url.split("/");
+    res.send(roll(myArray[3], myArray[4], 1))
 })
 
 app.get('/app/roll/*/*/*/', function (req, res) {
-    res.send('200 OK')
+    let url = req.url;
+    let myArray = url.split("/");
+    res.send(roll(myArray[3], myArray[4], myArray[5]))
 })
 
 
