@@ -18,15 +18,20 @@ app.get('/app/', function (req, res) {
     res.send('200 OK')
 })
 
-app.get('/app/roll/:sides/', function (req, res) {
+app.get('/app/roll/', function (req, res) {
+    res.send(roll(6, 2, 1));
+})
+
+app.get('/app/roll/*/', function (req, res) {
+    let myArray = req.split("/");
+    res.send(myArray)
+})
+
+app.get('/app/roll/*/*/', function (req, res) {
     res.send('200 OK')
 })
 
-app.get('/app/roll/:sides/:dice/', function (req, res) {
-    res.send('200 OK')
-})
-
-app.get('/app/roll/:sides/:dice/:rolls/', function (req, res) {
+app.get('/app/roll/*/*/*/', function (req, res) {
     res.send('200 OK')
 })
 
