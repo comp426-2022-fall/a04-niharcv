@@ -18,12 +18,25 @@ app.get('/app/', function (req, res) {
     res.send('200 OK')
 })
 
+app.get('/app/roll/:sides/', function (req, res) {
+    res.send('200 OK')
+})
+
+app.get('/app/roll/:sides/:dice/', function (req, res) {
+    res.send('200 OK')
+})
+
+app.get('/app/roll/:sides/:dice/:rolls/', function (req, res) {
+    res.send('200 OK')
+})
+
+
 app.get('*', function (req, res) {
     res.send('404 NOT FOUND');
 })
 
 app.post('/app/roll/', function(req, res) {
-    res.send(roll(req.body.sides, req.body.dice, req.body.rolls))
+    res.send(roll(req.body.sides, req.body.dice, req.body.rolls));
 });
 
 app.listen(port)
